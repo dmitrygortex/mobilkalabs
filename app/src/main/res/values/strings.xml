@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">mobilkaLaba1</string>
+    <string name="welcome_title">Добро пожаловать!</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="name">Имя/Логин</string>
+</resources>

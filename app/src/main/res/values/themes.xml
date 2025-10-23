@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MobilkaLaba1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_light</item>
+        <item name="colorOnPrimary">@color/black_background</item>
+        <item name="android:colorBackground">@color/black_background</item>
+        <item name="colorSurface">@color/black_surface</item>
+    </style>
+
+    <style name="Theme.MobilkaLaba1" parent="Base.Theme.MobilkaLaba1" />
+</resources>
