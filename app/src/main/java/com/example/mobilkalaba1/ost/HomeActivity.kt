@@ -1,9 +1,10 @@
-package com.example.mobilkalaba1
+package com.example.mobilkalaba1.ost
 
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
+import com.example.mobilkalaba1.R
 
 class HomeActivity : BaseActivity() {
 

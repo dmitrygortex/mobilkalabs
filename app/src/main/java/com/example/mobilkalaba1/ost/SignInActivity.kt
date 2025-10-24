@@ -1,4 +1,4 @@
-package com.example.mobilkalaba1
+package com.example.mobilkalaba1.ost
 
 import android.content.Intent
 import android.os.Build
@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.mobilkalaba1.R
 
 class SignInActivity : BaseActivity() {
 

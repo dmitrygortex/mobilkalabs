@@ -1,4 +1,4 @@
-package com.example.mobilkalaba1
+package com.example.mobilkalaba1.ost
 
 import android.os.Bundle
 import android.util.Log
