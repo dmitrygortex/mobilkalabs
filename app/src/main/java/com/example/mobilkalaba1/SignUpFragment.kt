@@ -37,7 +37,7 @@ class SignUpFragment : Fragment() {
             val password = binding.etPassword.text.toString()
 
             if (name.isNotEmpty() && email.contains("@") && password.length >= 6) {
-                // возврат на вход и передача через автоген SafeArgs
+                // возврат на вход и передача через автоген SafeArgs >>>
                 val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(
                     registeredName = name,
                     registeredEmail = email,
