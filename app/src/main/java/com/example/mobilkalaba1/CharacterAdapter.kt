@@ -3,8 +3,8 @@ package com.example.mobilkalaba1
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load // Если красное - добавь зависимость Coil
-import com.example.mobilkalaba1.databinding.ItemCharacterBinding // Или ItemPokemonBinding
+import coil.load
+import com.example.mobilkalaba1.databinding.ItemCharacterBinding
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.PokemonViewHolder>() {
 
@@ -29,7 +29,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.PokemonViewHolder
             tvName.text = pokemon.name
             tvId.text = "#${pokemon.id}"
 
-            // Загрузка картинки через Coil
+
             ivPokemon.load(pokemon.imageUrl) {
                 crossfade(true)
                 placeholder(android.R.drawable.ic_menu_gallery)

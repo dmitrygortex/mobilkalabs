@@ -17,18 +17,15 @@ class HomeViewModel : ViewModel() {
     fun loadPokemon() {
         viewModelScope.launch {
             try {
-                // Твой вариант №7: 301-350 (50 штук).
-                // Offset = 300 (пропускаем первые 300), Limit = 50
                 val response = ApiClient.instance.getPokemonList(limit = 50, offset = 300)
 
                 val mappedList = response.results.map { dto ->
-                    // Вытаскиваем ID из URL: ".../pokemon/301/" -> "301"
                     val id = dto.url.trimEnd('/').substringAfterLast('/').toInt()
 
                     Pokemon(
                         id = id,
                         name = dto.name.replaceFirstChar { it.uppercase() },
-                        // Официальные спрайты
+                        //вытаскиваю спрайсы с оф стайта
                         imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png"
                     )
                 }
@@ -36,7 +33,7 @@ class HomeViewModel : ViewModel() {
                 _pokemonList.value = mappedList
 
             } catch (e: Exception) {
-                _error.value = "Ошибка загрузки: ${e.localizedMessage}"
+                _error.value = "err loadPokemon: ${e.localizedMessage}"
                 e.printStackTrace()
             }
         }

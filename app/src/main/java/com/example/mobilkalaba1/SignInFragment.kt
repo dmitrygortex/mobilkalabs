@@ -15,7 +15,7 @@ class SignInFragment : Fragment() {
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
-    // SafeArgs: автоматически генерируемый класс для аргументов
+    // автоген SafeArgs
     private val args: SignInFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -29,7 +29,6 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Проверяем аргументы (если вернулись после регистрации)
         val regName = args.registeredName
         val regEmail = args.registeredEmail
         val regPassword = args.registeredPassword
@@ -39,7 +38,6 @@ class SignInFragment : Fragment() {
             binding.tvRegisteredUser.visibility = View.VISIBLE
             Toast.makeText(requireContext(), "Теперь войдите", Toast.LENGTH_LONG).show()
 
-            // Можно автозаполнить поля
             binding.etEmail.setText(regEmail)
             if (regPassword != null) binding.etPassword.setText(regPassword)
         }
@@ -48,11 +46,9 @@ class SignInFragment : Fragment() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            // Простая валидация для примера
             if (email.isNotEmpty() && password.length >= 6) {
-                // Переход к Home с передачей имени
                 val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment(
-                    userName = regName ?: "Пользователь"
+                    userName = regName ?: "rndm user"
                 )
                 findNavController().navigate(action)
             } else {
@@ -61,7 +57,6 @@ class SignInFragment : Fragment() {
         }
 
         binding.tvSignUp.setOnClickListener {
-            // Переход к регистрации
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
     }
