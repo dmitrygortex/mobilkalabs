@@ -1,30 +1,39 @@
-package com.example.pomodorotimer
+package com.example.mobilkalaba1
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.mobilkalaba1.R
+import androidx.navigation.fragment.navArgs
+import com.example.mobilkalaba1.databinding.FragmentHomeBinding
+import com.example.mobilkalaba1.HomeFragmentArgs
+import kotlin.getValue
 
 class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    private val args: HomeFragmentArgs by navArgs()
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // получаем имя пользователя из Bundle
-        val userName = arguments?.getString("USER_NAME") ?: "Пользователь"
+        val userName = args.userName
+        binding.tvStatus.text = "Добро пожаловать, $userName! 🍅"
+    }
 
-        val tvStatus = view.findViewById<TextView>(R.id.tv_status)
-        tvStatus.text = "Добро пожаловать, $userName! 🍅"
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
