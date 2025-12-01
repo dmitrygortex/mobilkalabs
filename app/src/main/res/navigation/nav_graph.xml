@@ -29,7 +29,7 @@
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
 
-        <!-- args принимает вход фаргм (возврат данных при регистрации) -->
+        <!-- args принимает вход фрагмента (возврат данных при регистрации) -->
         <argument
             android:name="registeredName"
             app:argType="string"

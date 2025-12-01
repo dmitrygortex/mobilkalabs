@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.mobilkalaba1.databinding.FragmentHomeBinding
-import com.example.mobilkalaba1.HomeFragmentArgs
 import kotlin.getValue
 
 class HomeFragment : Fragment() {

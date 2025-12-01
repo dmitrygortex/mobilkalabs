@@ -26,8 +26,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Настройка Spinner
-        val genderOptions = arrayOf("Выберите пол", "Мужской", "Женский", "Другой")
+        val genderOptions = arrayOf("Выберите пол", "Мужской", "Женский", "Еще какой-то?")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, genderOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerGender.adapter = adapter
@@ -38,7 +37,7 @@ class SignUpFragment : Fragment() {
             val password = binding.etPassword.text.toString()
 
             if (name.isNotEmpty() && email.contains("@") && password.length >= 6) {
-                // Возвращаемся на SignIn и передаем данные через SafeArgs
+                // возврат на вход и данные через SafeArgs
                 val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(
                     registeredName = name,
                     registeredEmail = email,
