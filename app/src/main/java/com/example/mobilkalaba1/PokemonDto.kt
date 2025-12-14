@@ -3,8 +3,7 @@ package com.example.mobilkalaba1
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Pokemon(
-    val id: Int,
+data class PokemonDto(
     val name: String,
-    val imageUrl: String
+    val url: String
 )
